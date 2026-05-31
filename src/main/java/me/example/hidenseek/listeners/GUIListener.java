@@ -30,7 +30,6 @@ public class GUIListener implements Listener {
         Player p = (Player) e.getWhoClicked();
         Material mat = e.getCurrentItem().getType();
 
-        // CATEGORY NAVIGATION
         switch (title) {
 
             case "§8Choose Category":
