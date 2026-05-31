@@ -22,7 +22,7 @@ public class HNSCommand implements CommandExecutor {
 
         switch (args[0].toLowerCase()) {
 
-            // 🔥 NEW CREATE COMMAND (FULL FLOW)
+            
             case "create" -> {
                 if (args.length < 2) {
                     p.sendMessage("§cUsage: /hidenseek create <map>");
@@ -31,7 +31,7 @@ public class HNSCommand implements CommandExecutor {
 
                 String worldName = args[1];
 
-                // Create world
+                
                 WorldCreator wc = new WorldCreator(worldName);
                 wc.environment(World.Environment.NORMAL);
                 wc.type(WorldType.FLAT);
@@ -45,7 +45,6 @@ public class HNSCommand implements CommandExecutor {
 
                 Location spawn = world.getSpawnLocation();
 
-                // Teleport ALL players in OP's current world
                 for (Player pl : p.getWorld().getPlayers()) {
                     pl.teleport(spawn);
                 }
@@ -53,7 +52,6 @@ public class HNSCommand implements CommandExecutor {
                 p.sendMessage("§aMap created: " + worldName);
                 p.sendMessage("§eStarting block selection...");
 
-                // 🔥 START FULL GAME FLOW
                 game.startGameFlow(world);
             }
 
