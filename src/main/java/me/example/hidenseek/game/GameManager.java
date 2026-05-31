@@ -33,16 +33,12 @@ public class GameManager {
         this.plugin = plugin;
     }
 
-    // =====================================================
-    // HELPER: BLOCK CENTER
-    // =====================================================
+   
     private Location getBlockCenter(Location loc) {
         return loc.getBlock().getLocation().add(0.5, 0, 0.5);
     }
 
-    // =====================================================
-    // START FLOW
-    // =====================================================
+
     public void startGameFlow(World world) {
 
         if (phase != GamePhase.LOBBY)
@@ -67,9 +63,7 @@ public class GameManager {
         Bukkit.getScheduler().runTaskLater(plugin, this::startGame, 20L * 30);
     }
 
-    // =====================================================
-    // START GAME
-    // =====================================================
+  
     private void startGame() {
 
         phase = GamePhase.HIDE;
@@ -105,9 +99,7 @@ public class GameManager {
         startTimer();
     }
 
-    // =====================================================
-    // SPAWN HIDER
-    // =====================================================
+   
     private void spawnHider(Player p, PlayerData d) {
 
         p.setInvisible(true);
@@ -132,13 +124,11 @@ public class GameManager {
 
         d.display = display;
 
-        // IMPORTANT: start 20s hide countdown
+      
         startHideCountdown(p, d);
     }
 
-    // =====================================================
-    // 20 SECOND HIDE COUNTDOWN
-    // =====================================================
+  
     private void startHideCountdown(Player p, PlayerData d) {
 
         d.inHideCountdown = true;
@@ -177,9 +167,7 @@ public class GameManager {
         }.runTaskTimer(plugin, 0L, 20L);
     }
 
-    // =====================================================
-    // BOSSBAR (5 MIN HIDE PHASE)
-    // =====================================================
+    
     private void startBossbar(Player p, PlayerData d) {
 
         BossBar bar = Bukkit.createBossBar(
@@ -225,9 +213,6 @@ public class GameManager {
         }.runTaskTimer(plugin, 0L, 20L);
     }
 
-    // =====================================================
-    // FOLLOW SYSTEM
-    // =====================================================
     private void startFollowSystem() {
 
         followTask = new BukkitRunnable() {
@@ -259,9 +244,7 @@ public class GameManager {
         followTask.runTaskTimer(plugin, 0, 1);
     }
 
-    // =====================================================
-    // HIDE SYSTEM (movement tracking placeholder)
-    // =====================================================
+    
     private void startHideSystem() {
 
         hideTask = new BukkitRunnable() {
@@ -290,9 +273,7 @@ public class GameManager {
         hideTask.runTaskTimer(plugin, 0, 20);
     }
 
-    // =====================================================
-    // TIMER
-    // =====================================================
+    
     private void startTimer() {
 
         timerTask = new BukkitRunnable() {
@@ -330,9 +311,7 @@ public class GameManager {
         return plugin;
     }
 
-    // =====================================================
-    // STOP
-    // =====================================================
+    
     public void stop() {
 
         phase = GamePhase.LOBBY;
