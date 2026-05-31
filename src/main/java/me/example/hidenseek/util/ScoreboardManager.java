@@ -70,7 +70,6 @@ public class ScoreboardManager {
     }
 
     private int getTimeLeft() {
-        // optional: hook into your timer system later
         return 0;
     }
 }
