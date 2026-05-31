@@ -20,9 +20,6 @@ public class BlockSelectGUI {
         this.game = game;
     }
 
-    // =====================================================
-    // OPEN MAIN CATEGORY MENU
-    // =====================================================
     public void open(Player p) {
 
         Inventory inv = Bukkit.createInventory(null, 9, "§8Choose Category");
@@ -34,9 +31,7 @@ public class BlockSelectGUI {
         p.openInventory(inv);
     }
 
-    // =====================================================
-    // CATEGORY PAGES
-    // =====================================================
+ 
     public void openNature(Player p) {
         Inventory inv = Bukkit.createInventory(null, 9, "§8Nature Blocks");
 
@@ -59,9 +54,6 @@ public class BlockSelectGUI {
         p.openInventory(inv);
     }
 
-    // =====================================================
-    // ITEM BUILDER
-    // =====================================================
     private ItemStack item(Material mat, String name, String lore) {
 
         ItemStack item = new ItemStack(mat);
@@ -74,9 +66,6 @@ public class BlockSelectGUI {
         return item;
     }
 
-    // =====================================================
-    // SELECT BLOCK
-    // =====================================================
     public void select(Player p, Material mat) {
 
         PlayerData d = game.data.get(p.getUniqueId());
