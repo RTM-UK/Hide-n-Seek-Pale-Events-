@@ -31,7 +31,6 @@ public class MovementListener implements Listener {
 
         d.lastMove = System.currentTimeMillis();
 
-        // IMPORTANT FIX:
         if (d.hidden) {
             d.hidden = false;
             d.stillSince = -1;
