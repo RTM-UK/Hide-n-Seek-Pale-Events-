@@ -17,7 +17,7 @@ public class PlayerData {
 
     public BlockDisplay display;
 
-    // NEW
+    
     public boolean inHideCountdown = false;
     public boolean hidingActive = false;
 
